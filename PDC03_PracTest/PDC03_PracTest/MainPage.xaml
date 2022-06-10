@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage     x:Class="PDC03_PracTest.MainPage"
+                     xmlns:models="clr-namespace:PDC03_PracTest.Models"
+                 xmlns:viewModels="clr-namespace:PDC03_PracTest.ViewModels"
+                 xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 
+     xmlns:xct="http://xamarin.com/schemas/2020/toolkit" 
+                 xmlns:controls="clr-namespace:PDC03_PracTest.Controls" BackgroundColor="{StaticResource Background}">
+    <ContentPage.BindingContext>
+
+        <viewModels:MainViewModel/>
+
+    </ContentPage.BindingContext>
+    
+    <Grid RowDefinitions="*, 80">
+
+
+        <ScrollView Orientation="Vertical"> 
+        <StackLayout Padding="20">
+            
+            <!--header -->
+            <Grid ColumnDefinitions="*,Auto" HorizontalOptions="Fill"> 
+        <RelativeLayout HeightRequest="80">
+            <Label Style="{StaticResource PageHeader}" Text="Welcome to" />
+                    <Label Style="{StaticResource PageHeader}" TextColor="{StaticResource Accent}"    RelativeLayout.XConstraint="145"
+                            RelativeLayout.YConstraint="-1" Text="IConserve!" />
+                    <Label Style="{StaticResource PageSubHeader}"    RelativeLayout.XConstraint="0"
+                            RelativeLayout.YConstraint="40" Text="It's a great day to start raising awareness" />
+              
+                </RelativeLayout>
+
+
+                <RelativeLayout>
+                    <Image RelativeLayout.XConstraint="315"
+                            RelativeLayout.YConstraint="-0"
+                            HeightRequest="35"
+                           VerticalOptions="Start"
+                            Source="{Binding UserImage}"
+                            WidthRequest="45">
+                   
+                    </Image>
+                </RelativeLayout>
+
+            </Grid>
+            
+            
+            <!--Header Quote -->
+            <controls:GradientFrame>
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto">
+                    <StackLayout>
+                        <Label Style="{StaticResource SectionHeader}" Text="{Binding Trivia}" />
+                        <Label
+                                Style="{StaticResource SectionDetail}"
+                                Text="{Binding Wiki}"
+                            Margin="-1, 15, -20, -15"
+                            TextColor="#b3b3b3"
+                            FontSize="12"
+                                TextTransform="Uppercase" />
+                        <Label
+                                Style="{StaticResource PageHeader}"
+                                Text="{Binding Temp}"
+                                TextColor="{StaticResource Accent}" />
+
+                    </StackLayout>
+
+
+                    <Image
+                            Grid.Column="1"
+                            Margin="40,0,0,0"
+                            HeightRequest="120"
+                            HorizontalOptions="Center"
+                            Source="amazon"
+                            WidthRequest="100" />
+
+                    <Label
+                            Grid.Row="1"
+                                TextColor="{StaticResource Accent}"  
+                            Style="{StaticResource SectionDetail}"
+                            Text="{Binding WeatherCondition}" FontSize="12" />
+
+                    <Label Grid.Row="1" Grid.Column="1">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                    <Span Style="{StaticResource SectionDetail}" Text="Number of White Rhinos left today: " FontSize="12"/>
+                                <Span
+                                        Style="{StaticResource SectionDetail}"
+                                        Text="{Binding ChanceOfRain}"
+                                        TextColor="{StaticResource Accent}" FontSize="12"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                </Grid>
+            </controls:GradientFrame>
+
+           
+            <!--Top Countries -->
+
+                <RelativeLayout HeightRequest="80">
+                    <Label Style="{StaticResource SectionHeader}" RelativeLayout.YConstraint="20"
+                           Text="Top Countries with the Most Endangered Species" />
+                </RelativeLayout>
+                <CarouselView HeightRequest="280" ItemsSource="{Binding CountryLocations}">
+           
+
+                <CarouselView.ItemTemplate>
+                        <DataTemplate>
+
+                            <controls:GradientFrame Padding="20">
+
+                                <Grid RowDefinitions="50, 60, 100, 120">
+
+                                    <Grid ColumnDefinitions="*, Auto">
+                                        <StackLayout>
+
+
+                                            <Label Style="{StaticResource SectionHeader}" Text="{Binding Location.Name}"/>
+
+
+                                            <Label Style="{StaticResource SectionDetail}" Text="{Binding Location.LatLong}"/>
+
+                                        </StackLayout>
+                                        <ImageButton
+                                            Grid.Column="1"
+                                            Padding="8"
+                                            BackgroundColor="{StaticResource Accent}"
+                                         Clicked="choose_Clicked"
+                                            CornerRadius="16"
+                                            HeightRequest="30"
+                                            Source="mainarrow"
+                                            WidthRequest="50" />
+                                    </Grid>
+
+                                    <Grid Grid.Row="1" ColumnDefinitions="*,*">
+                                        <StackLayout BindableLayout.ItemsSource="{Binding Location.Animal}" Orientation="Horizontal"   Margin="10,10,0,0">
+
+                                            <BindableLayout.ItemTemplate>
+
+                                                <DataTemplate>
+
+
+                                                    <Image 
+                                                        
+                                                        HeightRequest="30"
+                                                        WidthRequest="30"
+                                                        Margin="-10,0,0,0"
+                                                        VerticalOptions="Start"
+                                                        Source="{Binding Image}">
+                                                        <Image.Clip>
+                                                            <RoundRectangleGeometry CornerRadius="12" Rect="0,0,30,30"></RoundRectangleGeometry>
+                                                        </Image.Clip>
+                                                    </Image>
+                                                </DataTemplate>
+
+                                            </BindableLayout.ItemTemplate>
+                                        </StackLayout>
+
+                                        <StackLayout Grid.Column="1" Margin="5,15,5,5"> 
+                                        <Label 
+                                             
+                                            Text="{Binding AnimalAtLocation}" Style="{StaticResource SectionDetail}" TextColor="White"/>
+
+                                            <Label 
+                                             
+                                            Text="Swipe for other countries." Style="{StaticResource SectionDetail}" />
+                                            
+                                        </StackLayout>
+                                    </Grid>
+
+                                    <Grid Grid.Row="2" ColumnDefinitions="2*,*" ColumnSpacing="10">
+
+
+                                        <Frame Padding="0" CornerRadius="10"    HasShadow="False"> 
+                                        <Image Aspect="AspectFill" Source="{Binding Location.LocationThumbnail}"/>
+                                        </Frame>
+                                        <Frame Grid.Column="1" Padding="0" CornerRadius="10"    HasShadow="False">
+                                            <Image  
+                                            
+                                            Aspect="AspectFill" Source="{Binding Location.MapThumbnail}"/>
+                                        </Frame>
+
+
+
+
+                                    </Grid>
+
+                                </Grid>
+                            </controls:GradientFrame>
+
+
+                        </DataTemplate>
+
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+
+                <!--Header Quote -->
+                <controls:GradientFrame Margin="0,15,0,0">
+                    <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto">
+                        <StackLayout>
+                            <Label Style="{StaticResource SectionHeader}" Text="Help spread awareness" />
+                            <Label
+                            Style="{StaticResource SectionDetail}"
+                            Text="Help spread awareness by sharing your knowledge. Contribute now."
+                        Margin="-1, 15, -20, -15"
+                        TextColor="#b3b3b3"
+                            TextTransform="Uppercase" />
+                            <Label
+                            Style="{StaticResource PageHeader}"
+                            Text="{Binding Temp}"
+                            TextColor="{StaticResource Accent}" />
+
+                        </StackLayout>
+
+
+                        <Image
+                        Grid.Column="1"
+                        Margin="40,0,0,0"
+                        HeightRequest="120"
+                        HorizontalOptions="Center"
+                        Source="paw"
+                        WidthRequest="100" />
+
+
+
+                        <Button Grid.Row="1" Grid.ColumnSpan="2"
+                                Text="View all contributions"
+                                Margin="0,-5,0,0"
+                                CornerRadius="8"
+                                FontSize="12"
+                                Padding="10,0,10,0"
+                                FontAttributes="Bold"
+                                BackgroundColor="{StaticResource Accent}"
+                                Clicked="Contributions"/>
+                    </Grid>
+                </controls:GradientFrame>
+
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PDC03_PracTest.View.ShowAllAnimals" BackgroundColor="#171716">
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <RelativeLayout>
+                <BoxView x:Name="Boxview1" Color="#171716" RelativeLayout.WidthConstraint=
+                         "{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1}" 
+                          
+                     
+                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                    Property=Height, Factor=0.40}" />
+
+
+
+
+                <RelativeLayout HeightRequest="200" WidthRequest="200" RelativeLayout.XConstraint="5" RelativeLayout.YConstraint="-10">
+                    <Grid>
+                        <BoxView BackgroundColor="#191b11" HeightRequest="60" WidthRequest="185" CornerRadius="40" Margin="3,29,20,20" Opacity="3" />
+                    </Grid>
+                    <Image Source="logo"/>
+                </RelativeLayout>
+                <RelativeLayout HeightRequest="200" WidthRequest="200" RelativeLayout.XConstraint="300" RelativeLayout.YConstraint="35">
+                    
+                    <Button Text="Add"
+                        TextColor="DarkGreen"
+                        FontAttributes="Bold"
+                        FontSize="12"
+                        HorizontalOptions="Center"
+                        WidthRequest="80"
+                        HeightRequest="35"
+                        CornerRadius="10"
+                        BackgroundColor="White"
+                          
+                        Clicked="btnAddAnimal_Clicked">
+                    </Button>
+                </RelativeLayout>
+                <RelativeLayout  RelativeLayout.XConstraint="1" RelativeLayout.YConstraint="100">
+                    <ListView x:Name ="listData"
+                      ItemSelected="listData_ItemSelected"
+                      Margin="15"
+                              >
+                        <ListView.ItemTemplate>
+                            <DataTemplate >
+                                <ImageCell ImageSource="paw.png"
+                                   Text="{Binding AnimalName}"
+                                   Detail="{Binding AnimalCode}"
+                                   TextColor="White"
+                                   DetailColor="White"
+                                   />
+                                   
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </RelativeLayout>
+            </RelativeLayout>
+           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

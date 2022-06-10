@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:PDC03_PracTest"
+             x:Class="PDC03_PracTest.View.AddAnimal" BackgroundColor="#171716">
+    <ContentPage.Content>
+        
+        <StackLayout>
+            <ScrollView>
+                <StackLayout>
+
+                <Label Text=" Animal Information" FontSize="25" TextColor="White" HorizontalTextAlignment="Center"
+             FontAttributes="Bold" Margin="0,20,0,10"/>
+
+
+
+                <Frame OutlineColor="{StaticResource Accent}" BackgroundColor="Transparent" Margin="15,0,15,0" Padding="15, 0, 15, 0" HeightRequest="40"  CornerRadius="12">
+                    <local:PassEntry TextColor="White" x:Name="txtAnimalCode" 
+                       Placeholder="Animal Code" 
+                       HorizontalOptions="FillAndExpand"
+                       FontSize="12" PlaceholderColor="White"/>
+                </Frame>
+
+                <Frame OutlineColor="{StaticResource Accent}" BackgroundColor="Transparent" Margin="15,07,15,0" Padding="15, 0, 15, 0" HeightRequest="40"  CornerRadius="12">
+                    <local:PassEntry TextColor="White" x:Name="txtAnimalName" 
+                       Placeholder="Animal Name" 
+                       HorizontalOptions="FillAndExpand"
+                       FontSize="12" PlaceholderColor="White"/>
+                </Frame>
+
+                <Frame OutlineColor="{StaticResource Accent}" BackgroundColor="Transparent" Margin="15,7,15,0" Padding="15, 0, 15, 0" HeightRequest="40"  CornerRadius="12">
+                    <local:PassEntry TextColor="White" x:Name="txtInitialIdentification"
+                         Placeholder="Initial Identification" 
+                           HorizontalOptions="FillAndExpand"
+                           FontSize="12" PlaceholderColor="White"/>
+                </Frame>
+
+                <Frame OutlineColor="{StaticResource Accent}" BackgroundColor="Transparent" Margin="15,7,15,0" Padding="15, 0, 15, 0" HeightRequest="40"  CornerRadius="12">
+                    <local:PassEntry TextColor="White" x:Name="txtKingdom" 
+                                         Placeholder="Kingdom"  
+                                       HorizontalOptions="FillAndExpand"
+                                       FontSize="12" PlaceholderColor="White"/>
+                </Frame>
+
+                <Frame OutlineColor="{StaticResource Accent}" BackgroundColor="Transparent" Margin="15,7,15,0" Padding="15, 0, 15, 0" HeightRequest="40"  CornerRadius="12">
+                        <local:PassEntry TextColor="White" x:Name="txtClass" 
+                                Placeholder="Class"  
+                                HorizontalOptions="FillAndExpand"
+                                FontSize="12" PlaceholderColor="White"/>
+                </Frame>
+
+                <Frame OutlineColor="{StaticResource Accent}" BackgroundColor="Transparent" Margin="15,7,15,0" Padding="15, 0, 15, 0" HeightRequest="40"  CornerRadius="12">
+                        <local:PassEntry TextColor="White" x:Name="txtFamily"
+                            Placeholder="Family" 
+                            HorizontalOptions="FillAndExpand"
+                            FontSize="12" PlaceholderColor="White"/>
+                </Frame>
+
+                <Frame OutlineColor="{StaticResource Accent}" BackgroundColor="Transparent" Margin="15,7,15,0" Padding="15, 0, 15, 0" HeightRequest="40"  CornerRadius="12">
+                        <local:PassEntry TextColor="White" x:Name="txtGenus"
+                       Placeholder="Genus" 
+                    HorizontalOptions="FillAndExpand"
+                    FontSize="12" PlaceholderColor="White"/>
+                </Frame>
+
+                <Frame OutlineColor="{StaticResource Accent}" BackgroundColor="Transparent" Margin="15,7,15,0" Padding="15, 0, 15, 0" HeightRequest="40"  CornerRadius="12">
+                        <local:PassEntry TextColor="White" x:Name="txtScientificName" 
+                         Placeholder="Scientific Name" 
+                        HorizontalOptions="FillAndExpand"
+                        FontSize="12" PlaceholderColor="White"/>
+                </Frame>
+
+                <Frame OutlineColor="{StaticResource Accent}" BackgroundColor="Transparent" Margin="15,7,15,0" Padding="15, 0, 15, 0" HeightRequest="40"  CornerRadius="12">
+                     <local:PassEntry TextColor="White" x:Name="txtTaxonomy"
+                         Placeholder="Taxonomy"
+                        HorizontalOptions="FillAndExpand"
+                        FontSize="12" PlaceholderColor="White"/>
+                </Frame>
+
+                <Frame OutlineColor="{StaticResource Accent}" BackgroundColor="Transparent" Margin="15,7,15,0" Padding="15, 0, 15, 0" HeightRequest="40"  CornerRadius="12">
+                    <local:PassEntry TextColor="White" x:Name="txtCharacteristics" 
+                        Placeholder="Characteristics" 
+                        HorizontalOptions="FillAndExpand"
+                        FontSize="12" PlaceholderColor="White"/>
+                </Frame>
+
+                <Frame OutlineColor="{StaticResource Accent}" BackgroundColor="Transparent" Margin="15,7,15,0" Padding="15, 0, 15, 0" HeightRequest="40"  CornerRadius="12">
+                    <local:PassEntry TextColor="White" x:Name="txtHabitat" 
+                        Placeholder="Habitat"
+                        HorizontalOptions="FillAndExpand"
+                        FontSize="12" PlaceholderColor="White"/>
+                </Frame>
+
+                <Frame OutlineColor="{StaticResource Accent}" BackgroundColor="Transparent" Margin="15,7,15,0" Padding="15, 0, 15, 0" HeightRequest="40"  CornerRadius="12">
+                    <local:PassEntry TextColor="White" x:Name="txtThreats"
+                        Placeholder="Threats"
+                        HorizontalOptions="FillAndExpand"
+                        FontSize="12" PlaceholderColor="White"/>
+                </Frame>
+
+                <Frame OutlineColor="{StaticResource Accent}" BackgroundColor="Transparent" Margin="15,7,15,0" Padding="15, 0, 15, 0" HeightRequest="40"  CornerRadius="12">
+                        <local:PassEntry TextColor="White" x:Name="txtConservation" 
+                       Placeholder="Conservation"
+                    HorizontalOptions="FillAndExpand"
+                    FontSize="12" PlaceholderColor="White"/>
+                    </Frame>
+
+
+                    <Button Text="Save Animal Information"
+                                Margin="15"
+                                CornerRadius="8"
+                                FontSize="14"
+                                Padding="10,0,10,0"
+                                FontAttributes="Bold"
+                                BackgroundColor="{StaticResource Accent}"
+                                Clicked="btnSaveUpdate_Clicked"/>
+                   
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

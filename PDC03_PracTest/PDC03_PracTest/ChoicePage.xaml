@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             xmlns:controls="clr-namespace:PDC03_PracTest.Controls" BackgroundColor="{StaticResource Background}"
+             x:Class="PDC03_PracTest.ChoicePage ">
+    <ContentPage.Content>
+        <StackLayout>
+            <RelativeLayout>
+                <BoxView x:Name="Boxview1" Color="#171716" RelativeLayout.WidthConstraint=
+                         "{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1}" 
+                          
+                     
+                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                    Property=Height, Factor=0.40}" />
+
+
+
+
+                <RelativeLayout HeightRequest="200" WidthRequest="200" RelativeLayout.XConstraint="5" RelativeLayout.YConstraint="-10">
+                        <Grid>
+                        <BoxView BackgroundColor="#191b11" HeightRequest="60" WidthRequest="185" CornerRadius="40" Margin="3,29,20,20" Opacity="3" />
+                        </Grid>
+                        <Image Source="logo"/>
+                    </RelativeLayout>
+            
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="115">
+                    <Label Text="Choose a Country" FontSize="Large" TextColor ="{StaticResource Accent}" FontAttributes="Bold"  HorizontalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Padding="0" Margin="10,170,10,0" HorizontalOptions="FillAndExpand">
+                    <Frame    CornerRadius="30"  HeightRequest="450" HasShadow="True" Padding="0" Margin="10,20,10,10">
+
+
+
+
+                       
+                        <RelativeLayout>
+                            <Grid>
+                                <BoxView BackgroundColor="#181b10" HeightRequest="500" WidthRequest="355"  HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                            </Grid>
+                            <Frame BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100" CornerRadius="50" HasShadow="False" BorderColor="{StaticResource Accent}" RelativeLayout.XConstraint="15"
+                                     RelativeLayout.YConstraint="170" HorizontalOptions="Center" Padding="0">
+                                <ImageButton Source="ecuaflag" Aspect="AspectFill" Margin="0" Clicked="EcuadorDashboard"/>
+                            </Frame>
+
+                            <Frame BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100" CornerRadius="50" HasShadow="False" BorderColor="{StaticResource Accent}" RelativeLayout.XConstraint="130"
+                                     RelativeLayout.YConstraint="170" HorizontalOptions="Center" Padding="0">
+                                <ImageButton Source="usflag" Aspect="AspectFill" Margin="0" Clicked="USDashboard"/>
+                            </Frame>
+
+                            <Frame BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100" CornerRadius="50" HasShadow="False" BorderColor="{StaticResource Accent}" RelativeLayout.XConstraint="245"
+                                     RelativeLayout.YConstraint="170" HorizontalOptions="Center" Padding="0">
+                                <ImageButton Source="indoflag" Aspect="AspectFill" Margin="0" Clicked="IndoDashboard"/>
+                            </Frame>
+
+
+                            <RelativeLayout>
+                                
+                              
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+           
+
+
+                    </Frame>
+                </StackLayout>
+
+            </RelativeLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

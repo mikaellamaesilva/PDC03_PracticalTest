@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:PDC03_PracTest"
+             x:Class="PDC03_PracTest.RegForm" BackgroundImageSource="regform.png">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid RowSpacing="25" RowDefinitions="Auto, Auto, Auto, Auto">
+                <StackLayout Grid.Row="3">
+
+                    <Label Text="Sign Up" FontSize="25" TextColor="DarkGreen" HorizontalTextAlignment="Center"
+       FontAttributes="Bold"/>
+                    <Frame OutlineColor="White" BackgroundColor="Transparent" Margin="15" Padding="0" CornerRadius="50">
+
+                        <Frame OutlineColor="White" BackgroundColor="Transparent" Margin="1" Padding="25, 0, 25, 0" HeightRequest="50"  CornerRadius="50">
+
+
+
+                            <local:PassEntry TextColor="White" FontSize="16" Placeholder="Username" PlaceholderColor="White"/>
+
+                        </Frame>
+                    </Frame>
+
+                    <Frame OutlineColor="White" BackgroundColor="Transparent" Margin="15" Padding="0" CornerRadius="50">
+
+                        <Frame OutlineColor="White" BackgroundColor="Transparent" Margin="1" Padding="25, 0, 25, 0" HeightRequest="50"  CornerRadius="50">
+
+
+
+                            <local:PassEntry TextColor="White" FontSize="16" Placeholder="Email" PlaceholderColor="White"/>
+
+                        </Frame>
+                    </Frame>
+
+                    <Frame OutlineColor="White" BackgroundColor="Transparent" Margin="15" Padding="0" CornerRadius="50">
+
+                        <Frame OutlineColor="White" BackgroundColor="Transparent" Margin="1" Padding="25, 0, 25, 0" HeightRequest="50"  CornerRadius="50">
+
+
+
+                            <local:PassEntry TextColor="White" FontSize="16" Placeholder="Contact No." PlaceholderColor="White"/>
+
+                        </Frame>
+                    </Frame>
+
+
+                    <Frame OutlineColor="White" BackgroundColor="Transparent" Margin="15" Padding="0" CornerRadius="50">
+
+                        <Frame OutlineColor="White" BackgroundColor="Transparent" Margin="1" Padding="25, 0, 25, 0" HeightRequest="50"  CornerRadius="50">
+
+
+
+                            <local:PassEntry TextColor="White" FontSize="16" Placeholder="Password" PlaceholderColor="White"
+                               IsPassword="True" x:Name="EntryPassword" />
+
+                        </Frame>
+                    </Frame>
+                    <RelativeLayout Padding="25">
+
+                        <CheckBox Color="White" IsChecked="False" 
+                             
+                                  x:Name="CheckBox"
+                                  Margin="15,0,0,0"
+                                  />
+
+                        <Label Text="Show Password" TextColor="White" FontSize="18" RelativeLayout.XConstraint="50"
+       RelativeLayout.YConstraint="3"/>
+
+
+
+                    </RelativeLayout>
+
+                    <Button
+                        x:Name="RegButton"
+                    Text="Register"
+                        TextColor="#68fa68"
+                    BorderWidth="2"
+                        BorderColor="#68fa68"
+                    Margin="10, 0, 10, 0"
+                        FontSize="18"
+                          Clicked="reg_Clicked"
+                        HeightRequest="60"
+                        CornerRadius="60"
+                         FontAttributes="Bold"
+                        BackgroundColor="White"/>
+                    <RelativeLayout>
+                        <Label
+                           Text="Already Have an Account?"
+                            TextColor="White"
+                            FontSize="13"
+                        
+                            BackgroundColor="Transparent"
+                            RelativeLayout.XConstraint="99"
+                            RelativeLayout.YConstraint="15" 
+                            
+                            />
+
+
+                        <Button 
+                            x:Name="RegBtn"
+                            Text="Sign In"
+                            TextColor="#238d23"
+                            FontSize="13"
+                            FontAttributes="Bold"
+                            BackgroundColor="Transparent"
+                            RelativeLayout.XConstraint="229"
+                            RelativeLayout.YConstraint="-1"
+                            Clicked="SignInClicked" 
+                            TextTransform="None"/>
+
+
+                    </RelativeLayout>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

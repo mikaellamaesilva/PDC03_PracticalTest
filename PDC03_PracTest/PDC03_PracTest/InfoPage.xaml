@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage     x:Class="PDC03_PracTest.InfoPage"
+                     xmlns:models="clr-namespace:PDC03_PracTest.Models"
+                 xmlns:viewModels="clr-namespace:PDC03_PracTest.ViewModels"
+                 xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 
+     xmlns:xct="http://xamarin.com/schemas/2020/toolkit" 
+                 xmlns:controls="clr-namespace:PDC03_PracTest.Controls" BackgroundColor="{StaticResource Background}">
+    <ContentPage.BindingContext>
+
+        <viewModels:MainViewModel/>
+
+    </ContentPage.BindingContext>
+    
+    <Grid RowDefinitions="*, 80">
+
+
+        <ScrollView Orientation="Vertical">
+            <StackLayout Padding="20">
+
+                <!--header -->
+
+                <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+                    <Frame HeightRequest="200" BackgroundColor="DeepSkyBlue" Padding="0" Margin="0">
+                        <Image Source="{Binding Image}" Aspect="AspectFill" Margin="-40"/>
+                    </Frame>
+                </StackLayout>
+
+
+
+
+                <controls:GradientFrame>
+                    <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Style="{StaticResource SectionHeader}" Text="{Binding AnimalName}" FontSize="26"/>
+                                <Label Style="{StaticResource SectionHeader}" Text="{Binding AnimalCode}"
+                                   FontSize="14"
+                                   TextColor="{StaticResource Accent}" HorizontalOptions="EndAndExpand"/>
+                            </StackLayout>
+                            <Label Style="{StaticResource SectionHeader}" Text="{Binding ScientificName}"
+                                   FontSize="14"
+                                   TextColor="{StaticResource Accent}"/>
+                            <Label
+                                    Style="{StaticResource SectionDetail}"
+                                    Text="{Binding InitialIdentification}"
+                                Margin="-1, 15, -20, -15"
+                                TextColor="#b3b3b3"
+                                    TextTransform="Uppercase" />
+                            <Label Margin="0,15,0,0">
+                                <Label.FormattedText>
+                                    <FormattedString>
+
+                                        <Span
+                                        Style="{StaticResource SectionDetail}"
+                                        Text="Kingdom: "
+                                        TextColor="{StaticResource Accent}" />
+                                        <Span Style="{StaticResource SectionDetail}" 
+                                              Text="{Binding Kingdom}" 
+                                              TextColor="#b3b3b3"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Margin="0,2,0,0">
+                                <Label.FormattedText>
+                                    <FormattedString>
+
+                                        <Span
+                                        Style="{StaticResource SectionDetail}"
+                                        Text="Class: "
+                                        TextColor="{StaticResource Accent}" />
+                                        <Span Style="{StaticResource SectionDetail}" 
+                                              Text="{Binding Class}" 
+                                              TextColor="#b3b3b3"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Margin="0,2,0,0">
+                                <Label.FormattedText>
+                                    <FormattedString>
+
+                                        <Span
+                                        Style="{StaticResource SectionDetail}"
+                                        Text="Family: "
+                                        TextColor="{StaticResource Accent}" />
+                                        <Span Style="{StaticResource SectionDetail}" 
+                                              Text="{Binding Family}" 
+                                              TextColor="#b3b3b3"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Margin="0,2,0,0">
+                                <Label.FormattedText>
+                                    <FormattedString>
+
+                                        <Span
+                                        Style="{StaticResource SectionDetail}"
+                                        Text="Genus: "
+                                        TextColor="{StaticResource Accent}" />
+                                        <Span Style="{StaticResource SectionDetail}" 
+                                              Text="{Binding Genus}" 
+                                              TextColor="#b3b3b3"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Margin="0,2,0,0">
+                                <Label.FormattedText>
+                                    <FormattedString>
+
+                                        <Span
+                                        Style="{StaticResource SectionDetail}"
+                                        Text="Taxonomy: "
+                                        TextColor="{StaticResource Accent}" />
+                                        <Span Style="{StaticResource SectionDetail}" 
+                                              Text="{Binding Taxonomy}" 
+                                              TextColor="#b3b3b3"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Margin="0,2,0,0">
+                                <Label.FormattedText>
+                                    <FormattedString>
+
+                                        <Span
+                                        Style="{StaticResource SectionDetail}"
+                                        Text="Characteristics: "
+                                        TextColor="{StaticResource Accent}" />
+                                        <Span Style="{StaticResource SectionDetail}" 
+                                              Text="{Binding Characteristics}" 
+                                              TextColor="#b3b3b3"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Margin="0,2,0,0">
+                                <Label.FormattedText>
+                                    <FormattedString>
+
+                                        <Span
+                                        Style="{StaticResource SectionDetail}"
+                                        Text="Habitat: "
+                                        TextColor="{StaticResource Accent}" />
+                                        <Span Style="{StaticResource SectionDetail}" 
+                                              Text="{Binding Habitat}" 
+                                              TextColor="#b3b3b3"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Margin="0,2,0,0">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span
+                                        Style="{StaticResource SectionDetail}"
+                                        Text="Threats: "
+                                        TextColor="{StaticResource Accent}" />
+                                        <Span Style="{StaticResource SectionDetail}" 
+                                              Text="{Binding Threats}" 
+                                              TextColor="#b3b3b3"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Margin="0,2,0,0">
+                                <Label.FormattedText>
+                                    <FormattedString>
+
+                                        <Span
+                                        Style="{StaticResource SectionDetail}"
+                                        Text="Conservation: "
+                                        TextColor="{StaticResource Accent}" />
+                                        <Span Style="{StaticResource SectionDetail}" 
+                                              Text="{Binding Conservation}" 
+                                              TextColor="#b3b3b3"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                    </Grid>
+                </controls:GradientFrame>
+
+
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
